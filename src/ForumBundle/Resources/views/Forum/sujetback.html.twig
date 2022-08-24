@@ -1,0 +1,36 @@
+{% extends "default/LayoutBack.html.twig" %}
+{% block section %}
+    <br><br><br><br>
+    <div class="table-responsive">
+        <table class="table table-padded table-xl mb-0" id="recent-project-table">
+            <thead>
+            <tr>
+                <th class="border-top-0">User id</th>
+                <th class="border-top-0">Description</th>
+                <th class="border-top-0">Approve</th>
+                <th class="border-top-0">Decline</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in sujet %}
+                <tr>
+                    <td class="text-truncate align-middle">
+                        <a >{{ i.iduser }}</a>
+                    </td>
+                    <td class="text-truncate">
+                        <ul class="list-unstyled users-list m-0">
+                            <a>{{ i.descriptionf | raw }}</a>
+                        </ul>
+                    </td>
+                    <td class="text-truncate align-middle">
+                        <a href="{{ path('validersujet' , { 'id': i.idf }) }}" class ="btn btn-glow btn-round btn-bg-gradient-x-blue-green">Accept</a>
+                    </td>
+                    <td class="text-truncate align-middle">
+                        <a href="{{ path('refusersujet' , { 'id': i.idf }) }}" class ="btn btn-glow btn-round btn-bg-gradient-x-red-pink">Decline</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

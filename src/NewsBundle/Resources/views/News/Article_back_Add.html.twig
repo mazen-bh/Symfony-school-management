@@ -1,0 +1,32 @@
+{% extends 'default/LayoutBack.html.twig' %}
+{% block section %}
+    <br><br><br><br><br><br>
+    <div class="row">
+        <div class="col-12">
+            <div class="card pull-up">
+                <div class="card-content collapse show">
+                    {{ form_start(form)  }}
+                    <div class="card-body pt-0 pb-1">
+                        <center >
+                            <h1>Add Article</h1>
+                            {{ form_start(form)  }}
+                            Article Name: {{ form_widget(form.nomArticle) }} </br> </br>
+                            Article Content:
+                            <textarea rows="4" cols="50" {{ form_widget(form.contenuArticle) }} </textarea></br> </br>
+                            Image Article : {{ form_widget(form.imageArticle) }} </br> </br>
+                            {{ form_end(form) }}
+                            <br>
+                            <center>
+                                <input type="submit" value="Add" class="btn btn-glow btn-round btn-bg-gradient-x-purple-blue" >
+                                <a href="{{ path('showArticle') }}" class="btn btn-glow btn-round btn-bg-gradient-x-purple-red">
+                                    Cancel
+                                </a>
+                            </center>
+                        </center>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

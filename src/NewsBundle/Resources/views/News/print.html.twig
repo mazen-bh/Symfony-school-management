@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Print Article</title>
+    <link href="{{ asset('https://fonts.googleapis.com/icon?family=Material+Icons') }}"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset('BackOffice/css/style.css')}}">
+    <style type="text/css" media="print">
+        .no-print { display: none; }
+    </style>
+
+</head>
+
+<body>
+
+<div class="event_container">
+    <a href="{{ path('article', {'id':news.getIdArticle() }) }}"><img src="{{  asset('../public/uploads/'~news.getImageArticle() )}}"alt="image" width="350" height="350" ></a>
+    <div class="event_info">
+        <div class="event_title">
+            <h4> {{ news.getNomArticle()}}  </h4>
+        </div>
+        <div class="event_desc">
+            <p>Imprimé par : {{ nom }}</p>
+        </div>
+        <div class="event_footer">
+            <div class="event_date">
+                <p>{{news.getContenuArticle()}}</p>
+
+            </div>
+            <div class="no-print">
+                <div class="event_more ">
+                    <a href="javascript:window.print()" class="btn_more">
+                        Print
+                    </a>
+                </div></div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+

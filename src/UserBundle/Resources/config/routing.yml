@@ -1,0 +1,12 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+users_find_api:
+    path:     /finduser/{email}
+    defaults: { _controller: UserBundle:Default:find }
+create_user:
+    path:     /newuser
+    defaults: { _controller: UserBundle:Default:new }
+users_edit:
+    path:     /edituser/{id}
+    defaults: { _controller: UserBundle:Default:edit }

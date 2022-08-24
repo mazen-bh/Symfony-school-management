@@ -1,0 +1,8 @@
+{% extends 'default/LayoutBack.html.twig' %}
+{% block rrrr  %}
+<li class="header">      <li class="header">
+    {{ mgilet_notification_generate_path('notification_mark_all_as_seen', notifiableNotifications|first.notifiableEntity) }}
+</li>
+{% endblock %}
+{% block content_event %}
+{% endblock %}

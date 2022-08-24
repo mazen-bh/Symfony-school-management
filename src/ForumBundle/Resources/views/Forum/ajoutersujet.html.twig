@@ -1,0 +1,24 @@
+{% extends "default/LayoutFront.html.twig" %}
+{% block section %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="login-content">
+                    <h3>Add Subject</h3>
+                    <!-- Login Form -->
+                    {{ form_start(sujetform,{'attr':{'novalidate':'novalidate'}}) }}
+                    <div class="form-group">
+                        <label for="inputAddress">Description</label>
+
+                        {{ form_widget(sujetform.descriptionF, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(sujetform.Captcha) }}
+                    </div>
+                    {{ form_widget(sujetform.Valider, { 'attr': {'class': 'btn oneMusic-btn mt-30'} }) }}
+                    {{ form_end(sujetform) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

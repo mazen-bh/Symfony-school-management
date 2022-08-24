@@ -1,0 +1,63 @@
+forum_homepage:
+    path:     /
+    defaults: { _controller: ForumBundle:Default:index }
+
+publications:
+    path:     /affichersujet
+    defaults: { _controller: ForumBundle:Forum:ajoutersujet }
+
+afficher_mes_sujet:
+    path:     /affichermessujet
+    defaults: { _controller: ForumBundle:Forum:mesForums }
+
+supprimersujet:
+    path:     /supprimersujet/{id}
+    defaults: { _controller: ForumBundle:Forum:supprimersujet }
+
+modifiersujet:
+    path:     /modifiersujet/{id}
+    defaults: { _controller: ForumBundle:Forum:modifiersujet }
+afficherlesforumes:
+    path:     /afficherlesforumes
+    defaults: { _controller: ForumBundle:Forum:afficherlesforumes }
+
+back_forum:
+    path:     /backforum
+    defaults: { _controller: ForumBundle:Forum:reloadback  }
+validersujet:
+    path:     /{id}/validerSujet
+    defaults: { _controller: ForumBundle:Forum:validersujet }
+refusersujet:
+    path:     /{id}/refuserSujet
+    defaults: { _controller: ForumBundle:Forum:refusersujet }
+
+details:
+    path:     /details/{id}
+    defaults: { _controller: ForumBundle:Forum:details }
+
+aman:
+    path:     /aman/{id}
+    defaults: { _controller: ForumBundle:Forum:aman }
+
+modifierC:
+    path:     /modifierC/{id}
+    defaults: { _controller: ForumBundle:Forum:modifierC}
+
+supprimerC:
+    path:     /supprimerC{id}
+    defaults: { _controller: ForumBundle:Forum:supprimerC}
+signaler:
+    path:     /signaler/{id}
+    defaults: { _controller: ForumBundle:Forum:signaler }
+signalerback:
+    path:     /signalerback
+    defaults: { _controller: ForumBundle:Forum:signalerback }
+supprimersujetsignaler:
+    path:     /supprimersujetsignaler/{id}
+    defaults: { _controller: ForumBundle:Forum:supprimersujetsignaler }
+historique:
+    path:     /historique
+    defaults: { _controller: ForumBundle:Forum:afficherhistorique }
+clearhistory:
+    path:     /clear
+    defaults: { _controller: ForumBundle:Forum:deletehistorique }

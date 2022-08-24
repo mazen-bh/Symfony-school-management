@@ -1,0 +1,39 @@
+{% extends "default/LayoutFront.html.twig" %}
+{% block section %}
+    <div class="blog-area section-padding-100">
+    <div class="container">
+    <form action="{{ path('plusrecent') }}" method="get" class="search-form">
+        <div class="form-group">
+            <span  class="icon icon-search"></span>
+            <input name="filter" type="text" class="form-control" placeholder="Rechercher Article">
+        </div>
+    </form>
+    <section class="events-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                {% for article in arttri %}
+                    <!-- Single Event Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-event-area mb-30">
+                            <div class="event-thumbnail">
+                                <a href="{{ path('article', {'id':article.getIdArticle() }) }}"><img src="{{  asset('../public/uploads/'~article.getImageArticle() )}}"alt="image" width="1000" height="10000" ></a>
+                            </div>
+                            <div class="event-text">
+                                <h4>{{article.getNomArticle()}}</h4>
+                                <div class="event-meta-data">
+                                    <a href="#" class="event-place">Admin</a>
+                                    <a href="#" class="event-date">{{article.getDateArticle() }}</a>
+                                </div>
+                                <a href="{{ path('news', {'id':article.getIdArticle()}) }}"  class="btn see-more-btn">Download</a>                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Pagination -->
+    <div style="padding-left: 500px;padding-top: 10px"
+         class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
+        {{ knp_pagination_render(arttri) }}
+    </div>
+{% endblock %}

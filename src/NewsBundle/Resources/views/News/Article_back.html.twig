@@ -1,0 +1,49 @@
+{% extends "default/LayoutBack.html.twig" %}
+{% block section %}
+    <br><br><br><br>
+    <div class="table-responsive">
+        <table class="table table-padded table-xl mb-0" id="recent-project-table">
+            <thead>
+            <tr>
+                <th bgcolor="" align="center" >  Article Name </th>
+                <th bgcolor="" align="center" >  Article Content </th>
+                <th bgcolor="" align="center" > Picture </th>
+                <th bgcolor=""  align="center"> Title </th>
+                <th bgcolor="" align="center"> Date  </th>
+
+                <th bgcolor="" align="center">  </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in article %}
+
+
+                <tr>
+                    <td align="center"> {{ article.getNomArticle() }} </td>
+                    <td align="center"> {{ article.getContenuArticle() }} </td>
+                    <td align="center"> <img src="{{ asset('../public/uploads/'~article.getImageArticle() ) }} "alt="images" width="80" height="60" >
+                <td align="center"> {{ article.getTitreEvent() }} </td>
+                    <td align="center"> {{ article.getDateArticle() }} </td>
+
+                    <td class="text-truncate align-middle"> <a href="{{ path('articleDelete', {'id':article.getIdArticle() }) }}" class ="btn btn-glow btn-round btn-bg-gradient-x-blue-green" onclick="return confirm('comfirmer la supprission !  ')" >
+                            Delete </a> </br>
+                    </td>
+                    <td class="text-truncate align-middle">
+                        <a href="{{ path('articleUpdate', {'id':article.getIdArticle() }) }}" class ="btn btn-glow btn-round btn-bg-gradient-x-blue-green">Edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="navigation text-center">
+
+            <div class="text-center">{{ knp_pagination_render(article) }}</div>
+
+        </div>
+        <br>
+
+        <a href="{{ path('addArticle') }}">
+            <button  class="btn btn-glow btn-round btn-bg-gradient-x-blue-cyan">Add</button>
+        </a>
+    </div>
+{% endblock %}

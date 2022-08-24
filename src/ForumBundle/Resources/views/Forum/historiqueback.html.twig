@@ -1,0 +1,8 @@
+{% extends "default/LayoutBack.html.twig" %}
+{% block section %}
+    <br><br><br><br><br><br><br><br><br><br><br>
+    {% for i in historique %}
+        <div>{{ i.description }}</div>
+    {% endfor %}
+    <a href="{{ path('clearhistory') }}">Clear history </a>
+{% endblock %}

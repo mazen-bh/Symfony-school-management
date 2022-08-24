@@ -1,0 +1,30 @@
+{% extends "default/LayoutFront.html.twig" %}
+{% block section %}
+    <div class="blog-content">
+        <div  style="padding-left: 625px;padding-top: 10px"><a href="{{ path('publications') }}" class="btn oneMusic-btn mt-30"> Add Subject  </a></div>
+    </div>
+    {% for i in forums %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="login-content">
+                        <!-- Login Form -->
+                        <div class="form-group">
+                            <h4>Added :{{ i.date | date("m/d/Y")  }}  </h4>
+                            <p>Published by :  <b>Me</b></p>
+                            <h6> {{ i.descriptionF | raw
+                                }} </h6>
+                            <a href="{{ path('modifiersujet', { 'id': i.idF }) }}" class="generic-btn info-border radius"><i class="fa fa-edit" style=" font-size:30px;"></i> </a>
+                            <a href="{{ path('supprimersujet', { 'id': i.idF }) }}" class="generic-btn info-border radius"><i class="fa fa-trash" style="font-size:30px;color:red"></i> </a>
+                        </div>
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {%  endfor %}
+
+
+
+{% endblock %}

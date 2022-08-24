@@ -1,0 +1,95 @@
+news_homepage:
+    path:     /
+    defaults: { _controller: NewsBundle:Default:index }
+showArticle:
+    path:     /showArticle
+    defaults: { _controller: NewsBundle:News:showArticle }
+
+articleDelete:
+    path:     /deleteArticle/{id}
+    defaults: { _controller: NewsBundle:News:deleteArticle }
+addArticle:
+    path:     /newArticle
+    defaults: { _controller: NewsBundle:News:newArticle }
+articleUpdate:
+    path:     /editArticle/{id}
+    defaults: { _controller: NewsBundle:News:editArticle }
+indexArticle:
+    path:     /indexArticle
+    defaults: { _controller: NewsBundle:News:indexArticle }
+    methods:  [GET]
+article:
+    path:     /article/{id}
+    defaults: { _controller: NewsBundle:News:article }
+
+news:
+    path:     /news/{id}
+    defaults: { _controller: NewsBundle:News:print }
+
+chart:
+    path:     /chart
+    defaults: { _controller: ForumBundle:Forum:chart }
+
+trinbvue:
+    path:     /trinbvue
+    defaults: { _controller: NewsBundle:News:trinbvue }
+    methods : [GET]
+plusrecent:
+    path:     /plusrecent
+    defaults: { _controller: NewsBundle:News:triplusrecent }
+moinsrecent:
+    path:     /moinsrecent
+    defaults: { _controller: NewsBundle:News:trimoinsrecent }
+
+
+
+allAr:
+    path:     /tasks/newM
+    defaults: { _controller: NewsBundle:News:newM }
+
+all2:
+    path:     /tasks/all
+    defaults: { _controller: NewsBundle:News:all }
+
+chercherart:
+    path:     /chercher/{titre}
+    defaults: { _controller: NewsBundle:News:chercher }
+
+supprimerArticle:
+    path:     /supprimerArticle/{id}
+    defaults: { _controller: NewsBundle:News:supprimerArticle }
+
+allArticle:
+    path:     /allArticle
+    defaults: { _controller: NewsBundle:News:allarticle }
+
+oneArticle:
+    path:     /oneArticle/{id}
+    defaults: { _controller: NewsBundle:News:oneArticle }
+
+
+updateArticle:
+    path:     /updateArticle/{id}
+    defaults: { _controller: NewsBundle:News:updateArticle }
+
+chercherArt:
+    path:     /chercherArt/{titre}
+    defaults: { _controller: NewsBundle:News:chercherArt }
+
+listE:
+    path:     /listE
+    defaults: { _controller: NewsBundle:News:listE }
+
+Chicha:
+    path:     /Chicha
+    defaults: { _controller: NewsBundle:News:Chicha }
+
+Statmobile:
+    path:     /Statmobile
+    defaults: { _controller: NewsBundle:News:Statmobile  }
+Statmobile1:
+    path:     /Statmobile1
+    defaults: { _controller: NewsBundle:News:Statmobile1  }
+Statmobile2:
+    path:     /Statmobile2
+    defaults: { _controller: NewsBundle:News:Statmobile2  }

@@ -1,0 +1,32 @@
+{% extends 'default/LayoutBack.html.twig' %}
+{% block section %}
+    <br><br><br><br><br><br>
+    <div class="row">
+        <div class="col-12">
+            <div class="card pull-up">
+                <div class="card-content collapse show">
+                    {{ form_start(form)  }}
+                    <div class="card-body pt-0 pb-1">
+                        <center >
+                            <h1>Edit Article</h1>
+                            <br>
+                            Article Name:  {{ form_widget(form.nomArticle) }} </br> </br>
+                            Article Content:  {{ form_widget(form.contenuArticle) }} </br> </br>
+                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Image Article :  {{ form_widget(form.imageArticle) }} </br> </br>
+                            Event Title:  {{ form_widget(form.titreEvent) }}  </br> </br>
+                            <center> </center>
+                        </center>
+                        <br>
+                        <center>
+                            <input class="btn btn-glow btn-round btn-bg-gradient-x-blue-green" type="submit" value="Edit">
+                            <a href="{{ path('showArticle') }}" class="btn btn-glow btn-round btn-bg-gradient-x-purple-red">
+                                Cancel
+                            </a>
+                        </center>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

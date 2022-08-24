@@ -1,0 +1,3 @@
+resto_homepage:
+    path:     /
+    defaults: { _controller: RestoBundle:Default:index }

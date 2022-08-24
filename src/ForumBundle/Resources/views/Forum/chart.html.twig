@@ -1,0 +1,47 @@
+{% extends "default/LayoutBack.html.twig" %}
+{% block section %}
+
+
+
+    <div class="gap gap"></div>
+
+
+    <div class="container" style="margin-top: 150px">
+        <div class="row">
+
+            <p style="color: black"> Like Numbers Per Subject :</p>
+            <br>
+            <br>
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+            <div class="col-md-9" class="chartjs-wrapper"><canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
+                <script>
+                    var dataSQL=[];
+                    var dataNames=[];
+                </script>
+                {% for forum in forums %}
+
+                        <script>
+                            dataSQL.push({{ forum.nbreJaime }});
+                            dataNames.push("{{ forum.idF }}");
+                        </script>
+                {% endfor %}
+
+                <div class="chartjs-wrapper"><canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
+                    <script>new Chart(document.getElementById("chartjs-1"),{"type":"bar","data":{"labels":dataNames,"datasets":[{"label":"Like Numbers  ","data":dataSQL,"fill":false,
+                                    "backgroundColor":["rgba(87, 147, 250, 0.97)","rgba(87, 147, 250, 0.97)","rgba(255, 205, 86, 0.2)","rgba(75, 192, 192, 0.2)","rgba(54, 162, 235, 0.2)","rgba(153, 102, 255, 0.2)","rgba(201, 203, 207, 0.2)"],
+                                    "borderColor":["rgba(87, 147, 250, 0.97)","rgba(87, 147, 250, 0.97)","rgb(255, 205, 86)","rgb(75, 192, 192)","rgb(54, 162, 235)","rgb(153, 102, 255)","rgb(201, 203, 207)"],"borderWidth":1}]},
+                            "options":{"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}}});</script></div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="gap gap-small"></div>
+
+
+{% endblock %}
